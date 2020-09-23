@@ -1,0 +1,225 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 12px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #121328;
+    overflow: hidden;
+}
+
+header {
+    align-self: flex-start;
+    display: flex;
+    width: 100vw;
+    height: 80px;
+    background: #26284e;
+    align-items: center;
+    z-index: 1;
+}
+
+ul {
+    display: flex;
+    color: rgb(211, 211, 211);
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px 0 20px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    justify-content: center;
+    font-family: 'Lobster', cursive;
+    font-size: 1.6rem;
+}
+
+ul li:hover {
+    text-shadow: 0px 2px 5px #86F9FD;
+    cursor: pointer;
+    color: white;
+    background: #26284e;
+    transform: scale(1.1);
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px #86F9FD;
+}
+
+main {
+    overflow: hidden;
+    height: 80vh;
+}
+
+.imagem {
+    margin: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -45%);
+}
+
+.city {
+    width: 100%;
+    height: 100%;
+    animation: apear forwards 4s;
+}
+
+.neon {
+    width: 80%;
+    height: 10%;
+    animation: rotation forwards 4s;
+}
+
+.car {
+    width: 10%;
+    position: absolute;
+    animation: move ease infinite 4s;
+}
+
+.entry {
+    animation: entry linear forwards 0.5s;
+}
+
+.exit {
+    animation: exit linear forwards 0.5s;
+}
+
+.room {
+    width: 100%;
+    position: relative;
+    align-self: center;
+    transform: translate(0, 10%) rotate(-1deg);
+    opacity: 1;
+    z-index: 1;
+}
+
+.appear {
+    animation: 0.6s apear forwards 0.4s;
+}
+
+.zoom {
+    width: 20%;
+    height: 15%;
+    background: #121328;
+    border-radius: 50%;
+    transform: translate(-82%, 315%) scale(0);
+    opacity: 0;
+    position: absolute;
+}
+
+.grow {
+    animation: apear forwards 0.4s, 0.4s grow forwards 0.1s;
+}
+
+.shrink {
+    animation: apear forwards 0.4s, shrink ease 0.3s;
+}
+
+.ellipse {
+    width: 100%;
+    position: absolute;
+    transform: translate(0, -15%);
+    opacity: 0;
+}
+
+.ellipse:hover {
+    animation: apear forwards 0.4s;
+}
+
+@keyframes apear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes entry {
+    0% {
+        transform: translate(-50%, -45%) scale(1);
+    }
+    25% {
+        transform: translate(-40%, -50%) scale(1.5);
+    }
+    50% {
+        transform: translate(-30%, -50%) scale(2);
+    }
+    75% {
+        transform: translate(-20%, -50%) scale(2.5);
+    }
+    100% {
+        transform: translate(-10%, -50%) scale(3);
+    }
+}
+
+@keyframes exit {
+    0% {
+        transform: translate(-10%, -50%) scale(3);
+    }
+    25% {
+        transform: translate(-20%, -50%) scale(2.5);
+    }
+    50% {
+        transform: translate(-30%, -50%) scale(2);
+    }
+    75% {
+        transform: translate(-40%, -50%) scale(1.5);
+    }
+    100% {
+        transform: translate(-50%, -45%) scale(1);
+    }
+}
+
+@keyframes grow {
+    0% {
+        transform: translate(-82%, 315%) scale(0);
+    }
+    100% {
+        transform: translate(-82%, 315%) scale(1);
+    }
+}
+
+@keyframes shrink {
+    0% {
+        transform: translate(-82%, 315%) scale(1);
+    }
+    100% {
+        transform: translate(-82%, 315%) scale(0);
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translate(400%, 1800%);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(0, 2180%);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, 2180%);
+        opacity: 0;
+    }
+}

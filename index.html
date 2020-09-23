@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li>
+                Home
+            </li>
+            <li>
+                About Us
+            </li>
+            <li>More</li>
+            <li>Contact</li>
+
+        </ul>
+    </header>
+    <main>
+
+        <div class="imagem" id="imagem">
+            <img src="./img/Neon.png" class="neon" alt="">
+            <img src="./img/Ellipse.png" class="ellipse" alt="">
+            <img src="./img/City.png" class="city" onclick={zoom()} alt="">
+            <img src="./img/Car.png" class="car" alt="">
+            <div class="zoom" id="zoom"><img src="./img/Room.png" class="room" id="room" alt=""></div>
+        </div>
+    </main>
+    <script type="text/javascript">
+        // var pos = document.documentElement;
+
+        // pos.addEventListener("mousemove", e => {
+        //     pos.style.setProperty('--x', (e.clientX - 700) + "px");
+        //     pos.style.setProperty('--y', (e.clientY - 500) + "px");
+        // })
+
+        function zoom(params) {
+            var room = document.getElementById("room");
+            var zoom = document.getElementById("zoom");
+            var imagem = document.getElementById("imagem");
+            if (room.classList == "room appear") {
+                room.classList.remove("appear");
+                imagem.classList.remove("entry");
+                zoom.classList.add("shrink");
+                zoom.classList.remove("grow");
+                imagem.classList.add("exit");
+            } else {
+                imagem.classList.add("entry");
+                room.classList.add("appear");
+                zoom.classList.remove("shrink");
+
+                zoom.classList.add("grow");
+                imagem.classList.remove("exit");
+
+            }
+        }
+    </script>
+</body>
+
+</html>
